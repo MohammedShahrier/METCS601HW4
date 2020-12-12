@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		
+		
+		<!-- External STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+		
+		
+		 <script type = "text/javascript">
+function validateform() {
+
+if(document.myForm.facilitator.value =='Laura' || document.myForm.facilitator.value =='Fazil' || document.myForm.facilitator.value =='Harsh' )
+{
+	
+}else{
+	
+	 alert( "Please provide the correct facilitator's name!" );
+	 alert("Please choose one: Laura, Fazil or Harsh");
+	 document.myForm.facilitator.focus() ;
+            return false;
+}
+
+
+}
+      </script> 
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
+			<div class="inner">
+				<form name="myForm" action="https://bucs601.com/submit.php" method="POST"  onsubmit="return(validateform());">
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">First Name</label>
+							<input type="text" name="firstName"  id="firstName" class="form-control" pattern="[A-Za-z]{2,}" title="Please enter 2 or more words and only character" required>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Last Name</label>
+							<input type="text" name="lastName"  id="lastName" class="form-control" pattern="[A-Za-z]{2,}" title="Please enter 2 or more words and only character" required>
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<label for="">facilitator</label>
+						<input type="text" class="form-control" name="facilitator" id="facilitator" pattern="[A-Za-z]{2,}" title="Please enter 2 or more words and only character" required>
+						 <div class="error" id="facErr"></div>
+					</div>
+					 <input id="individual" type="radio" name="user" value="Individual">
+                      <label for="individual"><span></span>Male</label>
+
+                     <input id="organization" type="radio" name="user" value="Organization">
+                     <label for="organization"><span></span>Female</label>
+					<div class="checkbx">
+					<p>Did you agree with our term and policy </p>
+					<label class="container">Yes
+                      <input type="checkbox" >
+                      <span class="checkmark"></span>
+                      </label>
+                    <label class="container">No
+                     <input type="checkbox">
+                    <span class="checkmark"></span>
+                   </label>
+					</div>
+					
+
+					<input type="submit" value="Submit">
+				</form>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>
